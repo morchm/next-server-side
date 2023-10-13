@@ -15,4 +15,28 @@ export async function getData() {
   
     // Returnerer vores data som json
     return res.json();
+
+  }
+
+  //Med denne separate data-fil kan vi hente flere dataer:
+  export const moreData = async () => {
+    const res = await fetch("https://enemy.pages.dev/assets/animals.json");
+
+    if (!res.ok) {
+        throw new Error("failed");
+      }
+
+      return res.json();
+  }
+ 
+
+  //Data fra en random hjemmeside jeg fandt
+  export const dummyData = async() => {
+    const res = await fetch ("https://dummyjson.com/products");
+
+    if(!res.ok) {
+        throw new Error("failed");
+    }
+    
+    return res.json();
   }
