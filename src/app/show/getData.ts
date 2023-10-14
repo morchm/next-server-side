@@ -2,11 +2,11 @@
 export async function getData() {
     const res = await fetch("https://enemy.pages.dev/assets/data.json");
   
-    //Hver gang man kommer hen til denne side, 'show, siger man at den ikke skal cache hjemmesiden. 
-    {cache:"no-store"}
+    // //Hver gang man kommer hen til denne side, 'show, siger man at den ikke skal cache hjemmesiden. 
+    // {cache:"no-store"}
   
-    //Opdaterer cache hver 10-sekundt. (?- Er ikke sikker)
-    {next:{revalidate:10}}
+    // //Opdaterer cache hver 10-sekundt. (?- Er ikke sikker)
+    // {next:{revalidate:10}}
   
     //For at lytte om dataen blive indlæst korrekt
     if (!res.ok) {
